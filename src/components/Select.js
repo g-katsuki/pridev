@@ -15,13 +15,13 @@ export default function Select() {
       <select onChange={doChange} className="form-control-lg  m-2"
       defaultValue="-1" >
         <option value="mario">マリオ</option>
-        <option value="sample">サンプル1</option>
+        <option value="joker">ジョーカー</option>
         <option value="sample">サンプル1</option>
       </select>
       aa
       {name}
       bb
-      {/* <ApiFetch name={name} /> */}
+      <ApiFetch name={name} />
     </div>
   )
 }
