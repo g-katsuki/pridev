@@ -15,7 +15,6 @@
 .frame {
   background-color: rgb(224, 40, 40);
   border-radius: 20px;
-  height: 100%;
 }
 
 .header {
@@ -51,7 +50,7 @@ nav ul {
 nav ul li {
     display: inline-block;
     list-style: none;
-    margin: 20px 30px;
+    margin: 18px 1.5%;
 }
 
 nav ul li a {

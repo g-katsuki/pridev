@@ -22,7 +22,7 @@ function TopBar() {
                 <h2 className="logo">スマブラ座学</h2>
                 <ul class="menu">
                     <li><a href="/">ホーム</a></li>
-                    <li><a href="/frame">フレーム表</a></li>
+                    <li><a href="/frame/">フレーム表</a></li>
                     <li><a href="#">リンク集</a></li>
                     <li><a href="#">ホーム</a></li>
                     <li><a href="#">ホーム</a></li>
