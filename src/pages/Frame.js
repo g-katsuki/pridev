@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Select from "../components/Select";
 import { ApiFetch } from "./../components/ApiFetch";
 
 const Frame = () => {
@@ -9,7 +8,7 @@ const Frame = () => {
       <div>
         
       </div>
-      {/* <Select /> */}
+      <ApiFetch />
     </div>
   );
 };

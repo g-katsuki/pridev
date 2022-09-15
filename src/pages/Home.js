@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
-import { ApiFetch } from "./../components/ApiFetch";
 
 const Home = () => {
   return (
     <>
       <h1>ホーム</h1>
       <div>
-        <Link to={`/frame/`}>こちら</Link>
+        <Link to={`/frame/`}>フレーム表はこちら</Link>
       </div>
-      <ApiFetch />
     </>
   );
 };

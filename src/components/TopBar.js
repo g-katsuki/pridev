@@ -4,7 +4,7 @@ import React from 'react'
 function TopBar() {
   return (
     <div className='TopBar'>
-      <Link to={`/`}>ホームに戻る</Link>
+      
     </div>
   )
 }
