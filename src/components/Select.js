@@ -21,7 +21,7 @@ export default function Select() {
       aa
       {name}
       bb
-      <ApiFetch name={name} />
+      {/* <ApiFetch name={name} /> */}
     </div>
   )
 }
