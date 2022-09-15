@@ -11,7 +11,7 @@ const App = () => {
       <div className="App">aaa</div>
       <h1 className="bg-primary text-white display-4">React</h1>
       <TopBar />
-      <Select />
+      {/* <Select /> */}
       <Routes>
         <Route path={`/`} element={<Home />} />
         <Route path={`/frame/`} element={<Frame />} />

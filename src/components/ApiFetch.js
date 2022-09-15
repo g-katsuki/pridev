@@ -1,22 +1,38 @@
 import React, { useState, useEffect } from "react";
 
 export const ApiFetch = () => {
-	const [data, setData] = useState({message:'', ground:[], air:[]})
 
-	useEffect(() => {
+  const [data, setData] = useState({message:'', ground:[], air:[]})
+  const [log, setLog] = useState("")
+  const [name, setName] = useState("")
+
+  useEffect((e) => {
     // ここでユーザーに選択させた名前をパス名に結合させればいいのでは
-    var n = "mario"
-		fetch("./data/" + n + ".json")
-			 //レスポンスのデータ形式をjsonに設定
-			.then((res) => res.json())
-			.then((data) => {
-				setData(data);
-			});
-	}, []);
+    fetch("./../data/" + name + ".json")
+       //レスポンスのデータ形式をjsonに設定
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        console.log(data)
+      });
+      setLog(name)
+  }, [name]);
 
 	return (
 		<div className="alert alert-primary text-center">
-        <h5 className="mb-4">{data.message}</h5>
+      ccc
+      {name}
+      ddd
+      <b>ファイターを選択</b>
+      {log}
+
+      <select value={name} onChange={(e) => setName(e.target.value)} className="form-control-lg  m-2" defaultValue="-1" >
+        <option value="mario">マリオ</option>
+        <option value="joker">ジョーカー</option>
+        <option value="sample">サンプル1</option>
+      </select>
+
+        <h2 className="mb-4">{data.message}</h2>
         <table className="table bg-white">
           <thead className="table-dark">
             <tr><th>地上攻撃</th><th>発生</th><th>ガード硬直</th></tr>
