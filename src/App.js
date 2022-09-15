@@ -6,15 +6,17 @@ import TopBar from "./components/TopBar";
 
 const App = () => {
   return (
+    <div>
     <BrowserRouter>
-      <div className="App">aaa</div>
-      <h1 className="bg-primary text-white display-4">React</h1>
+      {/* <div className="App">aaa</div>
+      <h1 className="bg-primary text-white display-4">React</h1> */}
       <TopBar />
       <Routes>
         <Route path={`/`} element={<Home />} />
         <Route path={`/frame/`} element={<Frame />} />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 };
 

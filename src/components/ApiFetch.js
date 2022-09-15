@@ -19,7 +19,7 @@ export const ApiFetch = () => {
   }, [name]);
 
 	return (
-		<div className="alert alert-primary text-center">
+		<div>
       <b>ファイターを選択</b>
 
       <select value={name} onChange={(e) => setName(e.target.value)} className="form-control-lg  m-2" defaultValue="" >

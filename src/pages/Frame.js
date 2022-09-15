@@ -3,11 +3,8 @@ import { ApiFetch } from "./../components/ApiFetch";
 
 const Frame = () => {
   return (
-    <div className="alert alert-primary text-center">
-      <h1>フレーム</h1>
-      <div>
-        
-      </div>
+    <div className="alert alert-primary text-center m-5">
+      <h1>フレーム表</h1>
       <ApiFetch />
     </div>
   );
