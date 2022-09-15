@@ -4,11 +4,11 @@ export const ApiFetch = () => {
 	const [data, setData] = useState({message:'', ground:[], air:[]})
 
 	useEffect(() => {
-		// APIをfetchする(呼び出す)
-		fetch("./data/mario.json")
+    // ここでユーザーに選択させた名前をパス名に結合させればいいのでは
+    var n = "mario"
+		fetch("./data/" + n + ".json")
 			 //レスポンスのデータ形式をjsonに設定
-			 .then((res) => res.json())
-			 //APIから渡されるレスポンスデータ(data)をstateにセットする
+			.then((res) => res.json())
 			.then((data) => {
 				setData(data);
 			});
