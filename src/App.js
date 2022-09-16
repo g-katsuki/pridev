@@ -3,6 +3,7 @@ import "./App.css"
 import Home from "./pages/Home";
 import Frame from "./pages/Frame"
 import TopBar from "./components/TopBar";
+import Header from "./components/Header";
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
     <BrowserRouter>
       {/* <div className="App">aaa</div>
       <h1 className="bg-primary text-white display-4">React</h1> */}
-      <TopBar />
+      <Header />
       <Routes>
         <Route path={`/`} element={<Home />} />
         <Route path={`/frame/`} element={<Frame />} />

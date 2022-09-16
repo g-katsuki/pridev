@@ -31,7 +31,7 @@ export const ApiFetch = () => {
       <h2 className="mb-4">{data.message}</h2>
       <table className="table bg-white">
         <thead className="table-dark">
-          <tr><th>地上攻撃</th><th>発生</th><th>ガード硬直</th></tr>
+          <tr><th>地上</th><th>発生</th><th>ガード硬直</th></tr>
         </thead>
         <tbody>
           {data.ground.map((value, key)=> (
@@ -43,7 +43,19 @@ export const ApiFetch = () => {
           ))}
         </tbody>
         <thead className="table-dark">
-          <tr><th>空中攻撃</th><th>発生</th><th>ガード硬直</th></tr>
+          <tr><th>空中</th><th>発生</th><th>ガード硬直</th></tr>
+        </thead>
+        <tbody>
+          {data.air.map((value, key)=> (
+            <tr key={key}>
+              <th>{value.攻撃名}</th>
+              <td>{value.発生}</td>
+              <td>{value.ガード硬直}</td>
+            </tr>
+          ))}
+        </tbody>
+        <thead className="table-dark">
+          <tr><th>B</th><th>発生</th><th>ガード硬直</th></tr>
         </thead>
         <tbody>
           {data.air.map((value, key)=> (
