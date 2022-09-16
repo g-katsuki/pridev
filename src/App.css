@@ -12,6 +12,11 @@
   font-style: normal;
 }
 
+a {
+  text-decoration: none;
+  color: #faf8f8;
+}
+
 header {
   display: flex;
   justify-content: space-around;
@@ -25,8 +30,9 @@ header {
 }
 
 .fon{
-  font-size: 18px;
+  font-size: 25px;
   margin-top: 18%;
+  font-style:normal;
 }
 
 header .logo h4 {
@@ -37,7 +43,7 @@ header .logo h4 {
 
 nav ul {
   margin: 0;
-  padding-left: 25px;
+  padding-left: 0;
 }
 
 nav ul li {
@@ -47,7 +53,7 @@ nav ul li {
 }
 
 nav ul li a {
-  font-size: 17px;
+  font-size: 15px;
   text-decoration: none;
   color: var(--white-color);
   transition: all 0.2s;
