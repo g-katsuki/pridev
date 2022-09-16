@@ -5,19 +5,19 @@ const Header = () => {
   return (
     <header className="sticky-top">
       <div>
-        <h3>スマブラ座学</h3>
+        <p className="fon">スマブラ座学</p>
       </div>
 
       <nav>
         <ul>
           <li>
-            <a href="/">ホーム</a>
+            <Link to="/">ホーム</Link>
           </li>
           <li>
-            <Link to="/frame/">フレーム表</Link>
+            <Link to="/frame/">フレーム</Link>
           </li>
           <li>
-            <a href="#">リンク集</a>
+            <Link to="/Links/">リンク</Link>
           </li>
         </ul>
       </nav>

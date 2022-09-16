@@ -7,7 +7,7 @@ import "./App.css"
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className='bod'>
+    <div>
     <App />
     </div>
   </React.StrictMode>,
