@@ -19,7 +19,7 @@ function TopBar() {
     <div>
         <div className="header">
             <nav className="navbar">
-                <h3 className="logo">スマブラ座学</h3>
+                <h3 className="logo">座学</h3>
                 <ul class="menu">
                     <li><a href="/">ホーム</a></li>
                     <li><a href="/frame/">フレーム表</a></li>
