@@ -15,6 +15,8 @@ export const ApiFetch = () => {
       });
   }, [name]);
 
+  console.log(data);
+  
 	return (
 		<div>
       <b>ファイターを選択</b>
@@ -26,7 +28,7 @@ export const ApiFetch = () => {
       </select>
 
       <h2 className="mb-4">{data.message}</h2>
-      <table className="table backgroun-color: red">
+      <table className="table">
         <thead className="table-dark">
         <tr><th>地上</th><th>発生</th><th>全体</th><th>ガードF</th></tr>
         </thead>
