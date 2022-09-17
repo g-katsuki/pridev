@@ -35,6 +35,10 @@ header {
   font-style:normal;
 }
 
+table {
+  background-color: #d2cdcd;
+}
+
 header .logo h4 {
   margin: 0;
   padding: 0;
