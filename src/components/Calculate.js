@@ -5,6 +5,7 @@ export const Calculate = () => {
     const [data, setData] = useState({message:'', ground:[], air:[], b:[], grab:[]})
     const [name, setName] = useState("")
     const [attack, setAttack] = useState("")
+    const [guard, setGuard] = useState("")
   
     useEffect((e) => {
       // ユーザーに選択させた名前をパス名に結合させる
@@ -19,6 +20,10 @@ export const Calculate = () => {
     useEffect((e) => {
         setAttack(attack)
       }, [attack]);
+
+    useEffect((e) => {
+    setGuard(guard)
+    }, [guard]);
 
     return (
     <div>
@@ -44,8 +49,15 @@ export const Calculate = () => {
             ))
             }
         </select>
+        <br/>
+        <b>ガードファイター</b>
+        <select value={guard} onChange={(e) => setGuard(e.target.value)} className="form-control-lg  m-2" defaultValue="" >
+            <option value=""></option>
+            <option value="マリオ">マリオ</option>
+            <option value="ジョーカー">ジョーカー</option>
+        </select>
 
-        <h3 className="mb-4">{data.message}の{attack}を がガードすると以下の攻撃が確定</h3>
+        <h5 className="mb-4">"{data.message}"の"{attack}"を<br/>"{guard}"がガード<br/>すると以下の攻撃が確定</h5>
         
     </div>
     );
