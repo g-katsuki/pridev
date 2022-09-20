@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="sticky-top">
       <div>
-        <a href="/" className="fon">座学</a>
+        <a href="/" className="fon">ホーム</a>
       </div>
 
       <nav>
