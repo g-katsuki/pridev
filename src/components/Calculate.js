@@ -98,7 +98,7 @@ export const Calculate = () => {
 
     let items = result.map((value,key)=>(
         <div key={key} value={key}>
-        <div className="card listcard text-center bg-primary col-auto m-1">
+        <div className="card listcard text-center bg-primary col-auto mb-2 ml-2">
           {result[key]}
         </div>
         </div>  
@@ -139,11 +139,11 @@ export const Calculate = () => {
                 <option value="joker">ジョーカー</option>
             </select>
 
-            <button onClick={Search} className="btn btn-primary">検索</button>
+            <button onClick={Search} className="btn btn-primary btn-lg">検索</button>
 
         </div>
-        <h5 className="alert alert-secondary text-center mr-5 ml-5 mb-4">"{attacker.message}"の"{attack}"を<br/>"{guard.message}"がガード<br/>すると以下の攻撃が確定</h5>
-        <div className="row ml-3">
+        <h5 className="alert alert-secondary text-center mr-5 ml-5 mb-3">"{attacker.message}"の"{attack}"を<br/>"{guard.message}"がガード<br/>すると以下の攻撃が確定</h5>
+        <div className="row ml-2">
         {items}
         </div>
     </div>
