@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-function a(){
-    return <b>gjg</b>
-}
-
 export const Calculate = () => {
 
     const [attacker, setAttacker] = useState({message:'', ground:[], air:[], b:[], grab:[]})
@@ -24,8 +20,8 @@ export const Calculate = () => {
     //             console.log(data);
 	// 		});
 	// }, []);
-
-    useEffect((e) => {
+    
+    useEffect((e) => {  // selectタグで選択させるからuseEffectでレンダー後まで送らせて更新
       // ユーザーに選択させた名前をパス名に結合させる
       fetch("./../data/" + name + ".json")
          //レスポンスのデータ形式をjsonに設定
@@ -49,7 +45,9 @@ export const Calculate = () => {
         });
     }, [nameg]);
 
+    var temp_result = [];
     const Search = (e)=> {
+        temp_result.splice(0);
         var disadvantage_frame;
         for(var i = 0; i < attacker.ground.length; i++){
             if(attack == attacker.ground[i].攻撃名){
@@ -66,7 +64,28 @@ export const Calculate = () => {
                 disadvantage_frame = attacker.b[i].隙 - attacker.b[i].発生 - attacker.b[i].ガードF;
             }
         }
-        console.log(disadvantage_frame);
+        for(var i = 0; i < guard.ground.length; i++){
+            if(guard.ground[i].発生 <= disadvantage_frame - 11){
+                temp_result.push(guard.ground[i].攻撃名);
+            }
+        }
+        for(var i = 0; i < guard.air.length; i++){
+            if(guard.air[i].発生 <= disadvantage_frame - 3){
+                temp_result.push(guard.air[i].攻撃名);
+            }
+        }
+        for(var i = 0; i < guard.b.length; i++){
+            if(guard.b[i].発生 <= disadvantage_frame - 11){
+                temp_result.push(guard.b[i].攻撃名);
+            }
+            else if(i == 1 && guard.b[i].発生 <= disadvantage_frame){
+                temp_result.push(guard.b[i].攻撃名); 
+            }
+        }
+        if(guard.grab[0].発生 <= disadvantage_frame - 4){
+            temp_result.push("つかみ");
+        }
+        setResult(temp_result);
     };
 
     return (
@@ -104,6 +123,8 @@ export const Calculate = () => {
 
         <h5 className="mb-4">"{attacker.message}"の"{attack}"を<br/>"{guard.message}"がガード<br/>すると以下の攻撃が確定</h5>
         <button onClick={Search} className="btn btn-primary">検索</button>
+
+        <b>{result}</b>
     </div>
     );
   };
