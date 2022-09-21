@@ -29,6 +29,10 @@ header {
   z-index: 10;
 }
 
+.listcard {
+  width: 80px;
+}
+
 .fon{
   font-size: 25px;
   margin-top: 18%;

@@ -45,6 +45,14 @@ export const Calculate = () => {
         });
     }, [nameg]);
 
+    // useEffect((e) => {
+    //     for (var i = 0; i < result.length; i++) { 
+    //         var resultList = document.createElement('li'); 
+    //         todoList.textContent = todo[i]; 
+    //         document.getElementById('list').appendChild(todoList); 
+    //     }
+    // }, [result]);
+
     var temp_result = [];
     const Search = (e)=> {
         temp_result.splice(0);
@@ -88,43 +96,56 @@ export const Calculate = () => {
         setResult(temp_result);
     };
 
+    let items = result.map((value,key)=>(
+        <div key={key} value={key}>
+        <div className="card listcard text-center bg-primary col-auto m-1">
+          {result[key]}
+        </div>
+        </div>  
+    ))
+
     return (
     <div>
-        <b>攻撃ファイター</b>
-        <select value={name} onChange={(e) => setName(e.target.value)} className="form-control-lg  m-2" defaultValue="" >
-            <option value="template"></option>
-            <option value="mario">マリオ</option>
-            <option value="joker">ジョーカー</option>
-        </select>
-        <br/>
-        <b>技</b>
-        <select value={attack} onChange={(e) => setAttack(e.target.value)} className="form-control-lg m-2" defaultValue="" >
-            <option value=""></option>
-            {attacker.ground.map((value, key)=> (
-                <option key={key}>{value.攻撃名}</option>
-            ))
-            }
-            {attacker.air.map((value, key)=> (
-                <option key={key}>{value.攻撃名}</option>
-            ))
-            }
-            {attacker.b.map((value, key)=> (
-                <option key={key}>{value.攻撃名}</option>
-            ))
-            }
-        </select>
-        <br/>
-        <b>ガードファイター</b>
-        <select value={nameg} onChange={(e) => setNameg(e.target.value)} className="form-control-lg m-2" defaultValue="" >
-            <option value="template"></option>
-            <option value="mario">マリオ</option>
-            <option value="joker">ジョーカー</option>
-        </select>
+        <div className="alert alert-secondary text-center mt-4 mr-2 ml-2">
+        <h3>確定反撃を計算</h3>
+            <b>攻撃ファイター</b>
+            <select value={name} onChange={(e) => setName(e.target.value)} className="form-control-lg  m-2" defaultValue="" >
+                <option value="template"></option>
+                <option value="mario">マリオ</option>
+                <option value="joker">ジョーカー</option>
+            </select>
+            <br/>
+            <b>技</b>
+            <select value={attack} onChange={(e) => setAttack(e.target.value)} className="form-control-lg m-2" defaultValue="" >
+                <option value=""></option>
+                {attacker.ground.map((value, key)=> (
+                    <option key={key}>{value.攻撃名}</option>
+                ))
+                }
+                {attacker.air.map((value, key)=> (
+                    <option key={key}>{value.攻撃名}</option>
+                ))
+                }
+                {attacker.b.map((value, key)=> (
+                    <option key={key}>{value.攻撃名}</option>
+                ))
+                }
+            </select>
+            <br/>
+            <b>ガードファイター</b>
+            <select value={nameg} onChange={(e) => setNameg(e.target.value)} className="form-control-lg m-2" defaultValue="" >
+                <option value="template"></option>
+                <option value="mario">マリオ</option>
+                <option value="joker">ジョーカー</option>
+            </select>
 
-        <h5 className="mb-4">"{attacker.message}"の"{attack}"を<br/>"{guard.message}"がガード<br/>すると以下の攻撃が確定</h5>
-        <button onClick={Search} className="btn btn-primary">検索</button>
+            <button onClick={Search} className="btn btn-primary">検索</button>
 
-        <b>{result}</b>
+        </div>
+        <h5 className="alert alert-secondary text-center mr-5 ml-5 mb-4">"{attacker.message}"の"{attack}"を<br/>"{guard.message}"がガード<br/>すると以下の攻撃が確定</h5>
+        <div className="row ml-3">
+        {items}
+        </div>
     </div>
     );
   };
