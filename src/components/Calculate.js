@@ -51,7 +51,7 @@ export const Calculate = () => {
         var disadvantage_frame;
         for(var i = 0; i < attacker.ground.length; i++){
             if(attack == attacker.ground[i].攻撃名){
-                disadvantage_frame = attacker.ground[i].隙 - attacker.ground[i].発生 - attacker.ground[i].ガードF;
+                disadvantage_frame = attacker.ground[i].隙 - attacker.ground[i].ガードF;
             }
         }
         for(var i = 0; i < attacker.air.length; i++){
@@ -61,7 +61,7 @@ export const Calculate = () => {
         }
         for(var i = 0; i < attacker.b.length; i++){
             if(attack == attacker.b[i].攻撃名){
-                disadvantage_frame = attacker.b[i].隙 - attacker.b[i].発生 - attacker.b[i].ガードF;
+                disadvantage_frame = attacker.b[i].隙 - attacker.b[i].ガードF;
             }
         }
         for(var i = 0; i < guard.ground.length; i++){
@@ -75,10 +75,10 @@ export const Calculate = () => {
             }
         }
         for(var i = 0; i < guard.b.length; i++){
-            if(guard.b[i].発生 <= disadvantage_frame - 11){
+            if(i != 2 && guard.b[i].発生 <= disadvantage_frame - 11){
                 temp_result.push(guard.b[i].攻撃名);
             }
-            else if(i == 1 && guard.b[i].発生 <= disadvantage_frame){
+            if(i == 2 && guard.b[i].発生 <= disadvantage_frame){
                 temp_result.push(guard.b[i].攻撃名); 
             }
         }
@@ -107,6 +107,7 @@ export const Calculate = () => {
                 <option value="template"></option>
                 <option value="mario">マリオ</option>
                 <option value="joker">ジョーカー</option>
+                <option value="lucina">ルキナ</option>
             </select>
             <br/>
             <b>技</b>
@@ -131,6 +132,7 @@ export const Calculate = () => {
                 <option value="template"></option>
                 <option value="mario">マリオ</option>
                 <option value="joker">ジョーカー</option>
+                <option value="lucina">ルキナ</option>
             </select>
 
             <button onClick={Search} className="btn btn-primary btn-lg">検索</button>

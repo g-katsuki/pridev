@@ -25,12 +25,13 @@ export const ApiFetch = () => {
         <option value="template"></option>
         <option value="mario">マリオ</option>
         <option value="joker">ジョーカー</option>
+        <option value="lucina">ルキナ</option>
       </select>
 
       <h2 className="mb-4">{data.message}</h2>
       <table className="table">
         <thead className="table-dark">
-        <tr><th>地上</th><th>発生</th><th>全体</th><th>ガードF</th></tr>
+        <tr><th>地上</th><th>発生</th><th>差分F</th><th>ガードF</th></tr>
         </thead>
         <tbody>
           {data.ground.map((value, key)=> (
@@ -56,7 +57,7 @@ export const ApiFetch = () => {
           ))}
         </tbody>
         <thead className="table-dark">
-        <tr><th>B技</th><th>発生</th><th>全体</th><th>ガードF</th></tr>
+        <tr><th>B技</th><th>発生</th><th>差分F</th><th>ガードF</th></tr>
         </thead>
         <tbody>
           {data.b.map((value, key)=> (

@@ -1,7 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --black-color: #010000;
   --white-color: #ffffff;
   --lightgray-color: #e6e6e6;
+  overflow-x: hidden;
 }
 
 .App {
