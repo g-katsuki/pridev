@@ -45,14 +45,6 @@ export const Calculate = () => {
         });
     }, [nameg]);
 
-    // useEffect((e) => {
-    //     for (var i = 0; i < result.length; i++) { 
-    //         var resultList = document.createElement('li'); 
-    //         todoList.textContent = todo[i]; 
-    //         document.getElementById('list').appendChild(todoList); 
-    //     }
-    // }, [result]);
-
     var temp_result = [];
     const Search = (e)=> {
         temp_result.splice(0);
@@ -96,9 +88,10 @@ export const Calculate = () => {
         setResult(temp_result);
     };
 
+    // itemsに一つづつ属性を付与したresult[i]を格納
     let items = result.map((value,key)=>(
         <div key={key} value={key}>
-        <div className="card listcard text-center bg-primary col-auto mb-2 ml-2">
+        <div className="listcard text-center bg-primary col-auto mb-2 ml-2">
           {result[key]}
         </div>
         </div>  
@@ -106,8 +99,9 @@ export const Calculate = () => {
 
     return (
     <div>
+
         <div className="alert alert-secondary text-center mt-4 mr-2 ml-2">
-        <h3>確定反撃を計算</h3>
+            <h3>確定反撃を計算</h3>
             <b>攻撃ファイター</b>
             <select value={name} onChange={(e) => setName(e.target.value)} className="form-control-lg  m-2" defaultValue="" >
                 <option value="template"></option>
@@ -140,12 +134,18 @@ export const Calculate = () => {
             </select>
 
             <button onClick={Search} className="btn btn-primary btn-lg">検索</button>
+        </div>
 
-        </div>
-        <h5 className="alert alert-secondary text-center mr-5 ml-5 mb-3">"{attacker.message}"の"{attack}"を<br/>"{guard.message}"がガード<br/>すると以下の攻撃が確定</h5>
+        <h5 className="alert alert-secondary text-center mr-5 ml-5 mb-3">
+            "{attacker.message}"の"{attack}"を<br/>
+            "{guard.message}"がガード<br/>
+            すると以下の攻撃が確定
+        </h5>
+
         <div className="row ml-2">
-        {items}
+            {items}
         </div>
+
     </div>
     );
   };

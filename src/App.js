@@ -27,8 +27,8 @@ const App = () => {
       <span class="navbar-toggler-icon"></span>
     </button>
     </div>
-    </nav>
-    <Footer /> */}
+    </nav> */}
+    <Footer />
     </div>
   );
 };

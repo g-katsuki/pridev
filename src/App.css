@@ -29,6 +29,12 @@ header {
   z-index: 10;
 }
 
+footer {
+  font-size: 10px;
+  justify-content: space-around;
+  background: rgb(52, 50, 50);
+}
+
 .listcard {
   width: 80px;
 }
