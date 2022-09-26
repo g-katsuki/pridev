@@ -9,17 +9,10 @@ export const Calculate = () => {
     const [nameg, setNameg] = useState("")
     const [result, setResult] = useState([])
 
-	// useEffect(() => {
-	// 	// APIをfetchする
-	// 	fetch("https://script.google.com/macros/s/AKfycbw33CTXbytAieYV2YlMuV0DlwwhrbYHOqyh3Wgmptfug-lkQmQZQfF6NZbR3yWnYBerqQ/exec", { method: "GET" })
-	// 		//レスポンスのデータ形式をtextに設定
-	// 		.then((res) => res.text())
-	// 		 //APIから渡されるレスポンスデータ(data)をstateにセットする
-	// 		.then((data) => {
-	// 			setStr(data);
-    //             console.log(data);
-	// 		});
-	// }, []);
+	useEffect(() => {
+		// APIをfetchする
+		fetch("https://script.google.com/macros/s/AKfycbw33CTXbytAieYV2YlMuV0DlwwhrbYHOqyh3Wgmptfug-lkQmQZQfF6NZbR3yWnYBerqQ/exec", { method: "GET" })
+	}, []);
     
     useEffect((e) => {  // selectタグで選択させるからuseEffectでレンダー後まで送らせて更新
       // ユーザーに選択させた名前をパス名に結合させる
