@@ -108,6 +108,7 @@ export const Calculate = () => {
                 <option value="mario">マリオ</option>
                 <option value="joker">ジョーカー</option>
                 <option value="lucina">ルキナ</option>
+                <option value="falcon">ファルコン</option>
             </select>
             <br/>
             <b>技</b>
@@ -133,6 +134,7 @@ export const Calculate = () => {
                 <option value="mario">マリオ</option>
                 <option value="joker">ジョーカー</option>
                 <option value="lucina">ルキナ</option>
+                <option value="falcon">ファルコン</option>
             </select>
 
             <button onClick={Search} className="btn btn-primary btn-lg">検索</button>

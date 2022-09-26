@@ -26,6 +26,7 @@ export const ApiFetch = () => {
         <option value="mario">マリオ</option>
         <option value="joker">ジョーカー</option>
         <option value="lucina">ルキナ</option>
+        <option value="falcon">ファルコン</option>
       </select>
 
       <h2 className="mb-4">{data.message}</h2>
